@@ -1,0 +1,39 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#root {
+  min-height: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body {
+  border: 1px plum solid;
+}
+
+.radio-menu input[type="radio"] {
+  display: none;
+}
+.radio-menu label {
+  display: inline-block;
+  background-color: salmon;
+  cursor: pointer;
+  border: 1px solid green;
+  padding: 2px 10px;
+}
+.radio-menu input[type="radio"]:checked+label {
+  background-color: aquamarine;
+}
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border: 3px purple solid;
+}
