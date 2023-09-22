@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./Components/Home";
 import DogsGrid from "./Components/DogsGrid";
+import AltApp from "./Components/Youtube/AltApp";
 
 function App() {
   const HOME = "Home",
     DOGSGRID = "DogsGrid";
 
   const [view, setView] = useState(0);
+
+  useEffect (() => {
+    console.log("API LOADED (setView) ?")
+  }, []);
 
   let currentView = null;
 
@@ -26,7 +31,9 @@ function App() {
 
   return (
     <div className="main">
-      <div className="content">{currentView}</div>
+
+      <AltApp />
+      {/* <div className="content">{currentView}</div>
 
       <div className="radio-menu">
         <input
@@ -45,7 +52,7 @@ function App() {
           onClick={() => setView(DOGSGRID)}
         />
         <label for="radio2">Dogs</label>
-      </div>
+      </div> */}
     </div>
   );
 }
