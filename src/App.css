@@ -1,21 +1,56 @@
-html, body {
+/* html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-#root {
-  min-height: 90%;
-  max-width: 1280px;
+  display: flex;
+  flex: 1 0 auto;
+} */
+/* #root {
+
+  display: flex;
+  flex: 1 0 auto;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border: 4px green solid;
+ 
+
+} */
+/* .main {
   display: flex;
+  flex: 1 0 auto;
+  flex-grow: 1;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+  border: 5px yellow solid;
+} */
+.content {
+  border: red 3px solid;
+  flex: 1 0 auto;
+  
 }
 
+.radio-menu {
+  border: blue 3px solid;
+
+}
+
+.main {
+  border: 4px green solid;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  
+}
+
+
+
 body {
-  border: 1px plum solid;
+  border: 4px plum solid;
+   
 }
 
 .radio-menu input[type="radio"] {
@@ -31,9 +66,9 @@ body {
 .radio-menu input[type="radio"]:checked+label {
   background-color: aquamarine;
 }
-.content {
+/* .content {
   display: flex;
-  flex: 1;
+  flex: 1 1 auto;
   flex-direction: column;
   border: 3px purple solid;
-}
+} */
