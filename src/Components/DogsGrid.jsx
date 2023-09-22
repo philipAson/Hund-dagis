@@ -10,11 +10,14 @@ const DogsGrid = () => {
   const imgUrl = (img) => {};
 
   const [dogData, setDogData] = useState(null);
+//   const [view, setView] = useState(0);
 
   useEffect(() => {
     // SET DOG DATA!!!
-    
+    console.log("API LOADED (setView) ?")
+
   }, []);
+  
 
   const updateUi = (data) => {
     data.dogs.dog.forEach((dog) => {

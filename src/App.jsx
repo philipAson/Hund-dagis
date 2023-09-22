@@ -10,10 +10,6 @@ function App() {
 
   const [view, setView] = useState(0);
 
-  useEffect (() => {
-    console.log("API LOADED (setView) ?")
-  }, []);
-
   let currentView = null;
 
   switch (view) {
@@ -31,16 +27,14 @@ function App() {
 
   return (
     <div className="main">
-
-      <AltApp />
-      {/* <div className="content">{currentView}</div>
+      <div className="content">{currentView}</div>
 
       <div className="radio-menu">
         <input
           type="radio"
           id="radio1"
           name="radios"
-          class="btn-check"
+          className="btn-check"
           onClick={() => setView(HOME)}
         />
         <label for="radio1">Home</label>
@@ -48,11 +42,11 @@ function App() {
           type="radio"
           id="radio2"
           name="radios"
-          class="btn-check"
+          className="btn-check"
           onClick={() => setView(DOGSGRID)}
         />
         <label for="radio2">Dogs</label>
-      </div> */}
+      </div>
     </div>
   );
 }
