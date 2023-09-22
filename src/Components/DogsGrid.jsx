@@ -4,20 +4,18 @@ const DogsGrid = () => {
   
   const apiUrl = "https://api.jsonbin.io/v3/b/650d780d0574da7622aeb34a";
 
-
   const getDogs = async () => {};
 
   const imgUrl = (img) => {};
 
   const [dogData, setDogData] = useState(null);
-//   const [view, setView] = useState(0);
+  //   const [view, setView] = useState(0);
 
   useEffect(() => {
     // SET DOG DATA!!!
-    console.log("API LOADED (setView) ?")
-
+    console.log("API LOADED (setView) ?");
+    loadPage();
   }, []);
-  
 
   const updateUi = (data) => {
     data.dogs.dog.forEach((dog) => {
@@ -29,7 +27,13 @@ const DogsGrid = () => {
     });
   };
 
-  const loadPage = async () => {};
+  const loadPage = async () => {
+    const response = await fetch(apiUrl);
+    console.log("got response", response);
+
+    const dogData = await response.json
+    console.log("got Data", dogData);
+  };
 
   return (
     <div className="dog-grid">
