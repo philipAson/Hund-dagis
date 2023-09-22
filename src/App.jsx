@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import Home from "./Components/Home";
 import DogsGrid from "./Components/DogsGrid";
-import Hooks from "./Components/Hooks";
 
 function App() {
   const HOME = "Home",
@@ -27,10 +26,9 @@ function App() {
 
   return (
     <div className="main">
-      {/* <div className="content">{currentView}</div> */}
+      <div className="content">{currentView}</div>
 
-      <Hooks/>
-      {/* <div className="radio-menu">
+      <div className="radio-menu">
         <input
           type="radio"
           id="radio1"
@@ -47,7 +45,7 @@ function App() {
           onClick={() => setView(DOGSGRID)}
         />
         <label for="radio2">Dogs</label>
-      </div> */}
+      </div>
     </div>
   );
 }

@@ -1,26 +1,28 @@
 import React, { useEffect, useState } from "react";
 
 const TestButton = () => {
-  const [data, setData] = useState(null);
+  const [count, setCount] = useState(null);
 
   useEffect(() => {
     // körs första gången komponenten renderas. passar sig till API anrop
+
+    // ALLTSÅ SETDATA
     console.log("useEffect []")
 
-  }, [setData(true)]);
+  }, []);
 
   useEffect(() => {
     // körs första gången komponenten renderas
-    // körs varje gång data uppdateras
-    console.log("useEffect [data]")
+    // körs varje gång count uppdateras
+    console.log("useEffect []" + count)
 
-  }, [data]);
+  }, [count]);
 
 
   return (
     <div>
-      {data}
-      <button onClick={() => setData(true)}>TRÖCK!!</button>
+      {count}
+      <button onClick={() => setCount(count + 1)}>TRÖCK!!</button>
     </div>
   );
 };

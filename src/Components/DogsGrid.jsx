@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const DogsGrid = () => {
   
@@ -8,6 +8,13 @@ const DogsGrid = () => {
   const getDogs = async () => {};
 
   const imgUrl = (img) => {};
+
+  const [dogData, setDogData] = useState(null);
+
+  useEffect(() => {
+    // SET DOG DATA!!!
+    
+  }, []);
 
   const updateUi = (data) => {
     data.dogs.dog.forEach((dog) => {
