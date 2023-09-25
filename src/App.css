@@ -66,9 +66,28 @@ body {
 .radio-menu input[type="radio"]:checked+label {
   background-color: aquamarine;
 }
-/* .content {
+
+#dog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; 
+}
+
+.dog-tag {
   display: flex;
-  flex: 1 1 auto;
   flex-direction: column;
-  border: 3px purple solid;
-} */
+  justify-content: space-between;
+  align-items: center; 
+  border: 2px solid #333; 
+}
+
+
+.dog-img {
+  width: 100%;
+  height: auto; 
+}
+
+
+.dog-name {
+  
+}
