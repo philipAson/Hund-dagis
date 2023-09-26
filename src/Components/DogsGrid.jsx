@@ -4,26 +4,30 @@ const DogsGrid = () => {
   const apiUrl = "https://api.jsonbin.io/v3/b/650d780d0574da7622aeb34a";
 
   const [dogData, setDogData] = useState([]);
-  //   const [view, setView] = useState(0);
+
+  const overlay = document.getElementById("overlay");
+  const overlayImg = document.querySelector("#overlay img");
+  const overlayTitle = document.querySelector("#overlay h2");
+  const overlayText = document.querySelector("#overlay textarea");
 
   useEffect(() => {
-    // SET DOG DATA!!!
-    console.log("API LOADED (setView) ?");
     loadPage();
   }, []);
 
   useEffect(() => {
-    // SET DOG DATA!!!
-    // console.log("data => " + JSON.stringify(dogData, null, 2));
     updateUi(dogData);
   }, [dogData]);
 
   const loadPage = async () => {
     const response = await fetch(apiUrl);
-    console.log("got response", response);
 
     const data = await response.json();
     setDogData(data.record);
+  };
+
+  const openLightBox = (dog) => {
+    console.log("click" + dog.name);
+    overlay.classList.toggle("show");
   };
 
   const updateUi = (data) => {
@@ -33,6 +37,9 @@ const DogsGrid = () => {
     data.forEach((dog) => {
       const dogTag = document.createElement("div");
       dogTag.className = "dog-tag";
+      dogTag.addEventListener("click", () => {
+        openLightBox(dog);
+      });
 
       const imgElement = document.createElement("img");
       imgElement.src = dog.img;
@@ -48,7 +55,15 @@ const DogsGrid = () => {
     });
   };
 
-  return <div id="dog-grid"></div>;
+  return (
+    <div id="dog-grid">
+      <section id="overlay">
+        <h2></h2>
+        <img src="" alt="" />
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+      </section>
+    </div>
+  );
 };
 
 export default DogsGrid;

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./Components/Home";
 import DogsGrid from "./Components/DogsGrid";
-import AltApp from "./Components/Youtube/AltApp";
 
 function App() {
   const HOME = "Home",
