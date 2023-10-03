@@ -1,31 +1,4 @@
-/* html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex: 1 0 auto;
-} */
-/* #root {
 
-  display: flex;
-  flex: 1 0 auto;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  border: 4px green solid;
- 
-
-} */
-/* .main {
-  display: flex;
-  flex: 1 0 auto;
-  flex-grow: 1;
-  height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  border: 5px yellow solid;
-} */
 .content {
   border: red 3px solid;
   flex: 1 0 auto;
@@ -80,19 +53,11 @@ body {
   height: auto;
 }
 
-.dog-name {
-}
-
-#overlay {
-  display: none;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(121, 114, 114, 0.405);
-  justify-content: center;
-  align-items: center;
-}
-
-#overlay.show {
+#lightbox {
+  background-color: rgba(185, 185, 187, 0.917);
+  
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }

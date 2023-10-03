@@ -4,11 +4,8 @@ const DogsGrid = () => {
   const apiUrl = "https://api.jsonbin.io/v3/b/650d780d0574da7622aeb34a";
 
   const [dogData, setDogData] = useState([]);
-
-  const overlay = document.getElementById("overlay");
-  const overlayImg = document.querySelector("#overlay img");
-  const overlayTitle = document.querySelector("#overlay h2");
-  const overlayText = document.querySelector("#overlay textarea");
+  const [lightboxDisplay, setLightboxDisplay] = useState(false);
+  const [dogToShow, setDogToShow] = useState(null);
 
   useEffect(() => {
     loadPage();
@@ -26,8 +23,12 @@ const DogsGrid = () => {
   };
 
   const openLightBox = (dog) => {
-    console.log("click" + dog.name);
-    overlay.classList.toggle("show");
+    setDogToShow(dog);
+    setLightboxDisplay(true);
+  };
+
+  const hideLightBox = () => {
+    setLightboxDisplay(false);
   };
 
   const updateUi = (data) => {
@@ -57,11 +58,25 @@ const DogsGrid = () => {
 
   return (
     <div id="dog-grid">
-      <section id="overlay">
-        <h2></h2>
-        <img src="" alt="" />
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-      </section>
+      {lightboxDisplay ? (
+        <div id="lightbox" onClick={hideLightBox}>
+          <img id="lightbox-img" src={dogToShow.img}></img>
+          <h3>{dogToShow.name}</h3>
+          <p>
+            Sex: {dogToShow.sex} <br />
+            Breed: {dogToShow.breed} <br />
+            Age: {dogToShow.age} <br />
+            Chip: {dogToShow.chipNumber}
+          </p>
+          <h3>Owner</h3>
+          <p>
+            Name: {dogToShow.owner.name} {dogToShow.owner.lastName} <br />
+            Phone: {dogToShow.owner.phoneNumber}
+          </p>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
