@@ -57,26 +57,29 @@ const DogsGrid = () => {
   };
 
   return (
-    <div id="dog-grid">
+    <div id="gallery">
       {lightboxDisplay ? (
-        <div id="lightbox" onClick={hideLightBox}>
-          <img id="lightbox-img" src={dogToShow.img}></img>
-          <h3>{dogToShow.name}</h3>
-          <p>
-            Sex: {dogToShow.sex} <br />
-            Breed: {dogToShow.breed} <br />
-            Age: {dogToShow.age} <br />
-            Chip: {dogToShow.chipNumber}
-          </p>
-          <h3>Owner</h3>
-          <p>
-            Name: {dogToShow.owner.name} {dogToShow.owner.lastName} <br />
-            Phone: {dogToShow.owner.phoneNumber}
-          </p>
-        </div>
-      ) : (
-        ""
-      )}
+          <div id="lightbox" onClick={hideLightBox}>
+            <img id="lightbox-img" src={dogToShow.img}></img>
+            <h3>{dogToShow.name}</h3>
+            <p>
+              Sex: {dogToShow.sex} <br />
+              Breed: {dogToShow.breed} <br />
+              Age: {dogToShow.age} <br />
+              Chip: {dogToShow.chipNumber}
+            </p>
+            <h3>Owner</h3>
+            <p>
+              Name: {dogToShow.owner.name} {dogToShow.owner.lastName} <br />
+              Phone: {dogToShow.owner.phoneNumber}
+            </p>
+          </div>
+        ) : (
+          ""
+        )}
+      <div id="dog-grid">
+        
+      </div>
     </div>
   );
 };
