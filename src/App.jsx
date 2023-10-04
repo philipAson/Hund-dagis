@@ -26,8 +26,6 @@ function App() {
 
   return (
     <div className="main">
-      <div className="content">{currentView}</div>
-
       <div className="radio-menu">
         <input
           type="radio"
@@ -46,6 +44,7 @@ function App() {
         />
         <label for="radio2">Dogs</label>
       </div>
+      <div className="content">{currentView}</div>
     </div>
   );
 }
