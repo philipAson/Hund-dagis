@@ -36,6 +36,9 @@ const DogsGrid = () => {
     dogGrid.innerHTML = "";
 
     data.forEach((dog) => {
+      const attendTag = document.createElement("div");
+      attendTag.className = "attend-tag";
+
       const dogTag = document.createElement("div");
       dogTag.className = "dog-tag";
       dogTag.addEventListener("click", () => {
@@ -49,6 +52,12 @@ const DogsGrid = () => {
 
       const dogName = document.createElement("h1");
       dogName.innerHTML = dog.name;
+
+      if (dog.present === true) {
+        const attendTag = document.createElement("div");
+        attendTag.className = "attend-tag";
+        dogName.appendChild(attendTag);
+      }
 
       dogTag.append(imgElement, dogName);
 
