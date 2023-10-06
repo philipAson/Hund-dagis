@@ -52,8 +52,13 @@ body {
   flex: 1 1 auto;
 }
 
+#dog-grid {
+  padding-top: 2vw;
+}
+
 @media (max-width: 500px) {
   #dog-grid {
+    padding-top: 10vw;
     display: grid;
     width: 100%;
     justify-content: center;
