@@ -32,8 +32,11 @@ const DogsGrid = () => {
   };
 
   const updateUi = (data) => {
+
     const dogGrid = document.getElementById("dog-grid");
     dogGrid.innerHTML = "";
+
+    data.sort((a, b) => (a.present === true ? -1 : b.present === true ? 1 : 0));
 
     data.forEach((dog) => {
       const attendTag = document.createElement("div");
